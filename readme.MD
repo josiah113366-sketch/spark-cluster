@@ -18,8 +18,10 @@ spark-cluster/
 docker-compose up -d
 
 docker-compose down
+```
 
 # job 제출 -> 작업 시작 
-# 차후 airflow에서는 s3에 업로드된 etl_job.py 파일의 경로를 세팅하면 됨 
+- 차후 airflow에서는 s3에 업로드된 etl_job.py 파일의 경로를 세팅하면 됨 
+```
 docker exec spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 --executoer-memory 512m --executor-cores 1 /opt/jobs/etl_job.py
 ```
