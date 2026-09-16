@@ -5,8 +5,6 @@
 ```
 spark-cluster/
 ├── docker-compose.yml
-├── conf/
-│   └── spark-defaults.conf
 ├── jobs/
 │   └── etl_job.py          ← 실행할 PySpark 코드
 └── data/
@@ -25,3 +23,12 @@ docker-compose down
 ```
 docker exec spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 --executor-memory 512m --executor-cores 1 /opt/jobs/etl_job.py
 ```
+
+# 모니터링 및 확인
+- 구동 중인 애플리케이션 및 완료 조회 
+    - http://127.0.0.1:8080/
+- 특정 작업에 대한 조회
+    - http://127.0.0.1:8080/app/?appId=app-20260916012237-0000
+- 웹 기반 개발 등 관리
+    - http://127.0.0.1:8888/lab/workspaces/auto-I?reset
+    - 토큰은 직접 로그에서 확인
